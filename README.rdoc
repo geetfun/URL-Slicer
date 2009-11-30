@@ -9,7 +9,14 @@ figure out the URL elements from the string are borrowed from various places
 from the internet. Unfortunately I do not remember where I got what code snippets.
 If you find parts of the regex that I've used here was what you have written, please e-mail me and I'll put your name down as a contributor.
 
+= Installation
+
+gem install url_slicer
+
 = Usage
+
+require 'url_slicer'
+include UrlSlicer
 
 url = UrlSlicer.new("http://www.google.com")
 
