@@ -13,6 +13,9 @@ If you find parts of the regex that I've used here was what you have written, pl
 
 gem install url_slicer
 
+If you haven't already set up Gemcutter, simply go to http://gemcutter.org to learn 
+what you need to do.
+
 = Usage
 
 require 'url_slicer'
@@ -38,6 +41,10 @@ url.protocol      # "http"
 
 The source can be found at http://github.com/tolatomeow/URL-Slicer. Please feel free
 to fork it and add your own features. Pull requests are welcomed.
+
+= License
+
+MIT license.
 
 = Contact
 skhchiu [at] gmail [dot] com
