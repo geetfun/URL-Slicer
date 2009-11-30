@@ -1,16 +1,18 @@
-= url_slicer
+= URL Slicer
 
-Description goes here.
+I wanted a simple library to help me parse elements from a URL string, and thus I
+hacked away for a few hours and came up with URL Slicer.
 
-== Note on Patches/Pull Requests
- 
-* Fork the project.
-* Make your feature addition or bug fix.
-* Add tests for it. This is important so I don't break it in a
-  future version unintentionally.
-* Commit, do not mess with rakefile, version, or history.
-  (if you want to have your own version, that is fine but bump version in a commit by itself I can ignore when I pull)
-* Send me a pull request. Bonus points for topic branches.
+Acknowledgements:
+My regex know-how is a bit rusty, and so bits and pieces of the regex code to
+figure out the URL elements from the string are borrowed from various places
+from the internet. Unfortunately I do not remember where I got what code snippets.
+If you find parts of the regex that I've used here was what you have written, please e-mail me and I'll put your name down as a contributor.
+
+= Source Code
+
+= Contact
+skhchiu [at] gmail [dot] com
 
 == Copyright
 
