@@ -5,10 +5,10 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "url_slicer"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.summary = %Q{Slices and dices URL strings into their elements}
+    gem.description = %Q{Easy and convenient methods to determine URL elements from a string}
     gem.email = "skhchiu@gmail.com"
-    gem.homepage = "http://github.com/tolatomeow/url_slicer"
+    gem.homepage = "http://github.com/tolatomeow/URL-Slicer"
     gem.authors = ["Simon Chiu"]
     gem.add_development_dependency "shoulda", ">= 0"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
