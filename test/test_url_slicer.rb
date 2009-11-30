@@ -21,6 +21,11 @@ class TestUrlSlicer < Test::Unit::TestCase
       url = UrlSlicer.new("http://")
       assert !url.valid?
     end
+    
+    should "be valid if url is http://localhost:3000" do
+      url = UrlSlicer.new("http://localhost:3000")
+      assert url.valid?
+    end
   end
   
   context "returning host" do
@@ -32,6 +37,18 @@ class TestUrlSlicer < Test::Unit::TestCase
     should "return www.test.com if url is http://www.test.com:80" do
       url = UrlSlicer.new("http://www.test.com")
       assert_equal "www.test.com", url.host
+    end
+    
+    should "return localhost if url is http://localhost:3000" do
+      url = UrlSlicer.new("http://localhost:3000")
+      assert_equal "localhost", url.host
+    end
+    
+    should "raise error if invalid url http:/www.test.com is entered" do
+      url = UrlSlicer.new("http:/www.test.com")
+      assert_raise UrlSlicer::InvalidUrlError do
+        assert_equal "www.test.com", url.host
+      end
     end
   end
   
@@ -79,7 +96,44 @@ class TestUrlSlicer < Test::Unit::TestCase
       url = UrlSlicer.new("http://www.test.com")
       assert_equal 80, url.port
     end
+    
+    should "return port 21 if url is ftp://ftp.ucberkley.edu" do
+      url = UrlSlicer.new("ftp://ftp.ucberkley.edu")
+      assert_equal 21, url.port
+    end
+    
+    should "return port 443 if url is https://gmail.com" do
+      url = UrlSlicer.new("https://gmail.com")
+      assert_equal 443, url.port
+    end
   end
   
-  # context 
+  context "protocol" do
+    should "return http if url is http://www.test.com" do
+      url = UrlSlicer.new("http://www.test.com")
+      assert_equal "http", url.protocol
+    end
+    
+    should "return https if url is https://gmail.com" do
+      url = UrlSlicer.new("https://gmail.com")
+      assert_equal "https", url.protocol
+    end
+    
+    should "return ftp if url is ftp://ftp.ucberkley.edu" do
+      url = UrlSlicer.new("ftp://ftp.ucberkley.edu")
+      assert_equal "ftp", url.protocol
+    end
+  end
+  
+  context "ssl" do
+    should "return true if url is https://www.test.com" do
+      url = UrlSlicer.new("https://www.test.com")
+      assert url.ssl?
+    end
+    
+    should "return false if url is http://www.test.com" do
+      url = UrlSlicer.new("http://www.test.com")
+      assert !url.ssl?
+    end
+  end
 end
