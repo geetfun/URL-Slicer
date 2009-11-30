@@ -37,6 +37,9 @@ url.subdomain     # "www"
 
 url.protocol      # "http"
 
+If you've entered an invalid url, and subsequently try to call a method (eg. @instance_object.subdomain), it will raise UrlSlicer::InvalidUrlError, which you can
+resolve in your code.
+
 = Source Code
 
 The source can be found at http://github.com/tolatomeow/URL-Slicer. Please feel free
