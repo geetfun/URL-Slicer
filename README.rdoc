@@ -12,12 +12,19 @@ If you find parts of the regex that I've used here was what you have written, pl
 = Usage
 
 url = UrlSlicer.new("http://www.google.com")
+
 url.valid?        # true
+
 url.host          # "www.google.com"
+
 url.domain        # "google.com"
+
 url.port          # 80
+
 url.ssl?          # false
+
 url.subdomain     # "www"
+
 url.protocol      # "http"
 
 = Source Code
