@@ -9,7 +9,21 @@ figure out the URL elements from the string are borrowed from various places
 from the internet. Unfortunately I do not remember where I got what code snippets.
 If you find parts of the regex that I've used here was what you have written, please e-mail me and I'll put your name down as a contributor.
 
+= Usage
+
+url = UrlSlicer.new("http://www.google.com")
+url.valid?        # true
+url.host          # "www.google.com"
+url.domain        # "google.com"
+url.port          # 80
+url.ssl?          # false
+url.subdomain     # "www"
+url.protocol      # "http"
+
 = Source Code
+
+The source can be found at http://github.com/tolatomeow/URL-Slicer. Please feel free
+to fork it and add your own features. Pull requests are welcomed.
 
 = Contact
 skhchiu [at] gmail [dot] com
